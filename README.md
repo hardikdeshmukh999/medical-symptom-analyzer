@@ -2,6 +2,9 @@
 
 ## How to Use the App
 
+**Video Walkthrough:**
+[Youtube] (https://youtu.be/mPCf673xuhk)
+
 **Link Deployed:**  
 [Medical Symptom Analyzer App](https://hardikdeshmukh999-medical-symptom-analyzer-app-tpyzyp.streamlit.app/)
 
