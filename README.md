@@ -149,3 +149,55 @@ Real-time medication recommendation system linking symptoms with suitable drugs,
 - Python (Pandas, NumPy)
 - Pickle
 
+
+---
+
+
+## 💡 Inspiration
+Over 50% of OTC medicines in the US are misused due to lack of proper guidance. There are very few AI-powered tools that help users choose safe, appropriate OTC medications.
+
+---
+
+## ⚙️ What it does
+The app recommends medicines based on user-described symptoms by querying a trusted database built from FDA-approved sources. It provides both drug names and safe dosage guidance.
+
+---
+
+## 🛠️ How we built it
+We combined OpenAI’s embedding models and FAISS for similarity search to match symptoms with medical conditions. Then, we used GPT to generate natural explanations and recommendations. The dataset was curated from multiple trusted medical sources and embedded for fast querying.
+
+---
+
+## 🚧 Challenges we ran into
+- Lack of publicly available, structured OTC medication datasets.
+- We had to scrape and merge data from various sources, which was time-consuming.
+- Training the model required thoughtful prompt engineering and text preprocessing.
+- Here are the medical conditions we currently cover along with sample sizes. Each condition includes medicines, symptoms, and dosage guidance:
+  
+| Condition               | Entries |
+|------------------------|---------|
+| Acne, Psoriasis, GERD, Migraine, Eczema, Diarrhea, Osteoarthritis, Pain, Constipation, Insomnia, Colds & Flu, Rheumatoid Arthritis, etc. | 5 each |
+| Seizures, Herpes, Diabetes, Cholesterol, Anxiety, UTI, GI Issues | 1–4 each |
+
+We plan to expand and diversify this further to improve AI understanding.
+
+---
+
+## 🏆 Accomplishments that we're proud of
+- Built a working AI-driven symptom checker and medication recommender.
+- Created real-world healthcare impact using machine learning and LLMs.
+
+---
+
+## 📚 What we learned
+- How to combine vector search with LLMs for healthcare NLP tasks.
+- Data wrangling across multiple sources.
+- Optimizing prompt engineering for medical accuracy.
+
+---
+
+## 🚀 What's next for Medical Symptom Analyzer App
+- AI-powered drug interaction alerts  
+- Personalized dosage based on age/weight  
+- Conversational AI pharmacist chatbot  
+
