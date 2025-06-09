@@ -1,0 +1,22 @@
+trigger:
+- main
+
+variables:
+  imageName: 'medical-symptom-analyzer'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- checkout: self
+
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'azure-conn'  # <-- use your managed identity service connection name
+    scriptType: bash
+    scriptLocation: inlineScript
+    inlineScript: |
+      az acr login --name symptomacr
+      docker build -t symptomacr.azurecr.io/$(imageName):$(Build.BuildId) .
+      docker push symptomacr.azurecr.io/$(imageName):$(Build.BuildId)
+  displayName: 'Build and Push Docker Image to ACR' 
