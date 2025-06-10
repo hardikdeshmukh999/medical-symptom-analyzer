@@ -4,6 +4,8 @@ trigger:
 variables:
   imageName: 'medical-symptom-analyzer'
 
+pool:
+  name: 'Default'
 
 
 steps:
