@@ -4,8 +4,7 @@ trigger:
 variables:
   imageName: 'medical-symptom-analyzer'
 
-pool:
-  vmImage: 'ubuntu-latest'
+
 
 steps:
 - checkout: self
