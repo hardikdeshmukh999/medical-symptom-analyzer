@@ -5,7 +5,7 @@ variables:
   imageName: 'medical-symptom-analyzer'
 
 pool:
-  vmImage: 'ubuntu-latest'
+  name: 'Default'
 
 steps:
 - checkout: self
@@ -13,8 +13,9 @@ steps:
 - task: AzureCLI@2
   inputs:
     azureSubscription: 'azure-conn'  # <-- use your managed identity service connection name
-    scriptType: bash
+    scriptType: 'ps'
     scriptLocation: inlineScript
+    workingDirectory: '$(Build.SourcesDirectory)'    # <--- Add this line
     inlineScript: |
       az acr login --name symptomacr
       docker build -t symptomacr.azurecr.io/$(imageName):$(Build.BuildId) .
