@@ -7,7 +7,6 @@ variables:
 pool:
   name: 'Default'
 
-
 steps:
 - checkout: self
 
@@ -16,6 +15,7 @@ steps:
     azureSubscription: 'azure-conn'  # <-- use your managed identity service connection name
     scriptType: 'ps'
     scriptLocation: inlineScript
+    workingDirectory: '$(Build.SourcesDirectory)'    # <--- Add this line
     inlineScript: |
       az acr login --name symptomacr
       docker build -t symptomacr.azurecr.io/$(imageName):$(Build.BuildId) .
