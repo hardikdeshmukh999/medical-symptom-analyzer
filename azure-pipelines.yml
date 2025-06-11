@@ -5,7 +5,7 @@ variables:
   imageName: 'medical-symptom-analyzer'
 
 pool:
-  name: 'Azure Pipelines'
+  name: 'Default'
 
 
 steps:
