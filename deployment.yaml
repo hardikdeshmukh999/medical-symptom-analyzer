@@ -15,5 +15,6 @@ spec:
       containers:
       - name: app
         image: medical-symptom-analyzer:latest
+        imagePullPolicy: Never   # <------ ADD THIS LINE
         ports:
         - containerPort: 8501
