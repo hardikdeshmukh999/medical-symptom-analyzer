@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: medical-symptom-analyzer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: medical-symptom-analyzer
+  template:
+    metadata:
+      labels:
+        app: medical-symptom-analyzer
+    spec:
+      containers:
+      - name: app
+        image: medical-symptom-analyzer:latest
+        ports:
+        - containerPort: 8501
